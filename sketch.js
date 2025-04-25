@@ -15,12 +15,12 @@ let s = function(p) {
       p.background(0, 0, 0, 0);
     };
   
-    p.draw = function() {
-      p.image(img, p.mouseX, p.mouseY, 100, 100);
-    };
+    // p.draw = function() {
+    //   p.image(img, p.mouseX, p.mouseY, 100, 100);
+    // };
 
     p.mouse = function mouseDragged() {
-        p.ellipse(p.mouseX, p.mouseY, 50);
+        p.image(img, p.mouseX, p.mouseY, 100, 100);
     }
     p.windowResized = function() {
       p.resizeCanvas(p.windowWidth, p.windowHeight);
