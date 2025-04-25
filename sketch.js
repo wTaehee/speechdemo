@@ -12,16 +12,15 @@ let s = function(p) {
       cnv.style('z-index', '-2');  // Behind the text
       cnv.style('position', 'absolute');
       p.imageMode(p.CENTER);
-      p.background(0, 0, 0);
+      p.background(0, 0, 0, 0);
     };
   
-    // p.draw = function() {
-    //   p.image(img, p.mouseX, p.mouseY, 100, 100);
-    // };
-
-    p.mouse = function mouseDragged() {
-        p.image(img, p.mouseX, p.mouseY, 100, 100);
-    }
+    p.draw = function() {
+        if (p.mouseIsPressed) {
+      p.image(img, p.mouseX, p.mouseY, 100, 100);
+        }
+    };
+  
     p.windowResized = function() {
       p.resizeCanvas(p.windowWidth, p.windowHeight);
     };
