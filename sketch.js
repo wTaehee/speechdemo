@@ -1,22 +1,28 @@
-let img;
 
-function preload() {
-  img = loadImage("./assets/Lumi-writing-animation-final.gif");  // Make sure this image path is correct!
-}
-
-function setup() {
-  let cnv = createCanvas(windowWidth, windowHeight);
-  cnv.position(0, 0);
-  cnv.style('z-index', '-2');  // Set -2 to layer *behind* your h1/h2 text. Change to '2' if you want it *on top*.
-  cnv.style('position', 'absolute');
-  imageMode(CENTER);
-  background(0, 0, 0, 0);  // Transparent background
-}
-
-function draw() {
-  image(img, mouseX, mouseY, 100, 100);  // Draw the image at mouse position
-}
-
-function windowResized() {
-  resizeCanvas(windowWidth, windowHeight);  // Make the canvas responsive
-}
+let s = function(p) {
+    let img;
+  
+    p.preload = function() {
+      img = p.loadImage("./assets/Lumi-writing-animation-final.gif");  // Ensure the path is correct
+    };
+  
+    p.setup = function() {
+      let cnv = p.createCanvas(p.windowWidth, p.windowHeight);
+      cnv.position(0, 0);
+      cnv.style('z-index', '-2');  // Behind the text
+      cnv.style('position', 'absolute');
+      p.imageMode(p.CENTER);
+      p.background(0, 0, 0, 0);
+    };
+  
+    p.draw = function() {
+      p.image(img, p.mouseX, p.mouseY, 100, 100);
+    };
+  
+    p.windowResized = function() {
+      p.resizeCanvas(p.windowWidth, p.windowHeight);
+    };
+  };
+  
+  new p5(s);  // Create a new p5 instance
+  
