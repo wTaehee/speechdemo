@@ -17,7 +17,7 @@ let s = function(p) {
   
     p.draw = function() {
         if (p.mouseIsPressed) {
-      p.image(img, p.mouseX, p.mouseY, 100, 100);
+      p.image(img, p.mouseX, p.mouseY, 100, 100); // Adjust size as needed
         }
     };
   
