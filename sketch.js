@@ -12,7 +12,7 @@ let s = function(p) {
       cnv.style('z-index', '-2');  // Behind the text
       cnv.style('position', 'absolute');
       p.imageMode(p.CENTER);
-      p.background(0, 0, 0, 0);
+      p.background(0, 0, 0);
     };
   
     // p.draw = function() {
