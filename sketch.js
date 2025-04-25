@@ -20,7 +20,7 @@ let s = function(p) {
     };
 
     p.mouse = function mouseDragged() {
-        ellipse(mouseX, mouseY, 50);
+        p.ellipse(p.mouseX, p.mouseY, 50);
     }
     p.windowResized = function() {
       p.resizeCanvas(p.windowWidth, p.windowHeight);
