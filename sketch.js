@@ -18,7 +18,10 @@ let s = function(p) {
     p.draw = function() {
       p.image(img, p.mouseX, p.mouseY, 100, 100);
     };
-  
+
+    p.mouse = function mouseDragged() {
+        ellipse(mouseX, mouseY, 50);
+    }
     p.windowResized = function() {
       p.resizeCanvas(p.windowWidth, p.windowHeight);
     };
